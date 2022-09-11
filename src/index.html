@@ -10,13 +10,23 @@
 </head>
 <body>
     <section>
-        <figure><i class="fa-solid fa-eraser "></i></figure>
-        <figure><i class="fa-solid fa-hand-sparkles "></i></figure>
-        <figure><i class="fa-solid fa-pen "></i></figure>
-        <figure><i class="fa-solid fa-fill-drip "></i></figure>
+        <figure>
+            <i id="btn-erase" class="fa-solid fa-eraser "></i>
+            <input type="range" min="1" max="50" value="10" name="" id="color">
+        </figure>
+        <figure><i id="btn-clean" class="fa-solid fa-hand-sparkles "></i></figure>
+        <figure>
+            <i id="btn-pen" class="fa-solid fa-pen "></i>
+            <input type="range" min="1" max="50" value="10" name="" id="color">
+            <input type="color" value="" name="" id="range">
+        </figure>
+        <figure>
+            <i id="btn-fill" class="fa-solid fa-fill-drip "></i>
+            <input type="color" value="" name="" id="range">
+        </figure>
     </section>
 
-    <canvas id="canvas" style="border:solid black 1px;">
+    <canvas id="canvas">
         Your browser does not support canvas element.
     </canvas>
 </body>
