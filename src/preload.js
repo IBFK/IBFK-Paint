@@ -22,8 +22,8 @@ window.addEventListener("resize", function(){
 let withdPen = ctx.lineWidth = 3;
 ctx.lineJoin = 'round';
 ctx.lineCap = 'round';
-let colorPen = ctx.strokeStyle = '#ffffff';
-var backgroundMain = '#0c0c22'
+let colorPen = ctx.strokeStyle = '#000000';
+// var backgroundMain = '#ffffff';
 
 
 // set mouse position
@@ -71,8 +71,8 @@ function onPaint(){
 
 
 // Section function
-let range = document.getElementById('range');
-let color = document.getElementById('color');
+// let range = document.getElementById('range');
+// let color = document.getElementById('color');
 
 // function for clean canvas
 let  btnClean = document.getElementById('btn-clean');
@@ -107,8 +107,8 @@ btnPenColor.addEventListener('click', function(){
 });
 
 // function for change pen width
-let btnPenWidth = document.getElementById('btn-width');
-btnPenWidth.addEventListener('click', function(){
-	ctx.lineWidth = 10;
-});
+// let btnPenWidth = document.getElementById('btn-width');
+// btnPenWidth.addEventListener('click', function(){
+// 	ctx.lineWidth = 10;
+// });
 
