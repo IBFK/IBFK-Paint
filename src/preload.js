@@ -14,9 +14,9 @@ window.addEventListener("resize", function(){
 });
 
 //set canvas to full screen
-// canvas.style.position='fixed'; 
-// canvas.style.top='0'; 
-// canvas.style.left='0'; 
+// canvas.style.position='fixed';
+// canvas.style.top='0';
+// canvas.style.left='0';
 
 //set canvas settings
 let withdPen = ctx.lineWidth = 3;

@@ -7,7 +7,7 @@
 body{
     height: 100vh;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
 }
 canvas{
@@ -77,4 +77,21 @@ section figure i:hover{
     align-content: center;
     justify-content: center;
     align-items: center;
+}
+
+#rangeEraser, #rangeColor{
+    margin-top: 2em;
+}
+
+.logo{
+    width: 130px;
+    height: 130px;
+    position: fixed;
+    z-index: 1;
+    margin-bottom: 25em;
+    margin-left: 70em;
+    background: url(./assets/cooTiLogo.png);
+    /* object-fit: cover; */
+    background-size: cover;
+    background-position: center;
 }
