@@ -6,7 +6,6 @@ var ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-
 //set function for resize window with canvas
 window.addEventListener("resize", function(){
 	canvas.width = window.innerWidth;
@@ -18,12 +17,19 @@ window.addEventListener("resize", function(){
 // canvas.style.top='0';
 // canvas.style.left='0';
 
+// 1400005908915369
+//PEGR781123
+
 //set canvas settings
-let withdPen = ctx.lineWidth = 3;
-ctx.lineJoin = 'round';
-ctx.lineCap = 'round';
-let colorPen = ctx.strokeStyle = '#000000';
-// var backgroundMain = '#ffffff';
+let widthPen = ctx.lineWidth = 10;
+let lineJoin = ctx.lineJoin = 'round';
+let lineCap = ctx.lineCap = 'round';
+let colorPen = ctx.strokeStyle = 'black';
+let backgroundMain  = ctx.fillStyle = '#f1f0eb';
+// let actualMainColor = ctx.fillStyle;
+
+
+
 
 
 // set mouse position
@@ -80,35 +86,37 @@ btnClean.addEventListener('click', function(){
 	ctx.fillStyle = backgroundMain;
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	ctx.strokeStyle = colorPen;
-	ctx.lineWidth = withdPen;
-
 });
+
+//function to change width pen
+function changeWidth(value){
+	ctx.lineWidth = value;
+}
 
 // function for erase color
-let btnErase = document.getElementById('btn-erase');
-btnErase.addEventListener('click', function(){
+function clearButton(){
 	ctx.strokeStyle = ctx.fillStyle;
-	ctx.lineWidth = range.value;
-});
+	// alert('clear');
+}
 
 
 // function for change fill color
-let btnColor = document.getElementById('btn-fill');
-btnColor.addEventListener('click', function(){
-	ctx.fillStyle = color.value;
-	ctx.fillRect(0, 0, canvas.width, canvas.height);
-});
+// let btnColor = document.getElementById('btn-fill');
+// btnColor.addEventListener('click', function(){
+// 	ctx.fillStyle = color.value;
+// 	ctx.fillRect(0, 0, canvas.width, canvas.height);
+// });
 
-// fuction for change pen color
-let btnPenColor = document.getElementById('btn-pen');
-btnPenColor.addEventListener('click', function(){
-	ctx.strokeStyle = colorPen;
-	ctx.lineWidth = withdPen;
-});
+// function for change pen color
+// let btnPenColor = document.getElementById('btn-pen');
+// btnPenColor.addEventListener('click', function(){
+// 	ctx.strokeStyle = colorPen;
+// 	ctx.lineWidth = widthPen;
+// });
 
 // function for change pen width
 // let btnPenWidth = document.getElementById('btn-width');
-// btnPenWidth.addEventListener('click', function(){
-// 	ctx.lineWidth = 10;
+// btnPenWidth.addEventListener('input', function(){
+// 	ctx.lineWidth = btnPenWidth.value;
 // });
 
