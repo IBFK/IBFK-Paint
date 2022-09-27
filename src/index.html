@@ -9,27 +9,35 @@
     <title>PaintJs-IBFK</title>
 </head>
 <body>
-    <section>
-        <figure>
-            <i onclick="clearButton()" id="btn-erase" class="fa-solid fa-eraser "></i>
-            <!-- <input type="range" min="1" max="50" value="10" name="" id="rangeEraser"> -->
-        </figure>
-        <figure>
-            <i id="btn-clean" class="fa-solid fa-hand-sparkles "></i>
-        </figure>
-        <figure>
-            <i id="btn-pen" class="fa-solid fa-pen "></i>
-            <input type="range" onInput=" changeWidth(this.value) " min="1" max="50" value="10">
-            <!-- <input type="color" value="" name="" id="colorPen"> -->
-        </figure>
-        <figure>
-            <i id="btn-fill" class="fa-solid fa-fill-drip "></i>
-            <!-- <input type="color" value="" name="" id="colorFill"> -->
-        </figure>
-    </section>
-    <div class="logo"></div>
-    <!-- <div class="modal"></div> -->
     <canvas id="canvas"></canvas>
+    <div class="container">
+        <div class="column-1">
+            <section>
+                <figure>
+                    <i onclick="clearButton()" id="btn-erase" class="fa-solid fa-eraser "></i>
+                    <!-- <input type="range" min="1" max="50" value="10" name="" id="rangeEraser"> -->
+                </figure>
+                <figure>
+                    <i id="btn-clean" class="fa-solid fa-hand-sparkles "></i>
+                </figure>
+                <figure>
+                    <i id="btn-pen" class="fa-solid fa-pen "></i>
+                    <input id="rangePen" type="range" onInput=" changeWidth(this.value) " min="1" max="50" value="10">
+                    <!-- <input type="color" value="" name="" id="colorPen"> -->
+                </figure>
+                <figure>
+                    <i id="btn-fill" class="fa-solid fa-fill-drip "></i>
+                    <!-- <input type="color" value="" name="" id="colorFill"> -->
+                </figure>
+            </section>
+        </div>
+        <div class="column-2">
+            <div class="logo">
+                <img src="./assets/cooTiLogo.png" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- <div class="modal"></div> -->
 </body>
 <script src="index.js"></script>
 <script src="preload.js"></script>
