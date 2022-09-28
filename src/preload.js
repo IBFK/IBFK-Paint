@@ -39,18 +39,21 @@ var mouse = {x:0, y:0};
 canvas.addEventListener('mousemove',function(e){
 	mouse.x = (e.pageX - this.offsetLeft)
 	mouse.y = (e.pageY - this.offsetTop)
+	e.defaultPrevented()
 },false);
 
 canvas.addEventListener("touchmove",function(e){
 	var touches = e.changedTouches;
 	mouse.x = (touches[0].pageX - this.offsetLeft);
 	mouse.y = (touches[0].pageY - this.offsetTop);
+	e.defaultPrevented();
 },false);
 
 canvas.addEventListener('mousedown',function(e){
 	ctx.beginPath();
 	ctx.moveTo(mouse.x,mouse.y);
 	canvas.addEventListener('mousemove',onPaint,false);
+	e.defaultPrevented();
 },false);
 
 canvas.addEventListener("touchstart",function(e){
@@ -60,19 +63,23 @@ canvas.addEventListener("touchstart",function(e){
 	mouse.y = (touches[0].pageY - this.offsetTop);
 	ctx.moveTo(mouse.x,mouse.y);
 	canvas.addEventListener("touchmove",onPaint,false);
+	e.defaultPrevented();
 },false);
 
 canvas.addEventListener('mouseup',function(){
 	canvas.removeEventListener('mousemove',onPaint,false);
+	e.defaultPrevented();
 },false);
 
 canvas.addEventListener("touchend",function(){
 	canvas.removeEventListener("touchmove",onPaint,false);
+	e.defaultPrevented();
 },false);
 
-function onPaint(){
+function onPaint(e){
 	ctx.lineTo(mouse.x,mouse.y);
 	ctx.stroke();
+	e.defaultPrevented()
 };
 
 
@@ -96,8 +103,17 @@ function changeWidth(value){
 // function for erase color
 function clearButton(){
 	ctx.strokeStyle = ctx.fillStyle;
+	ctx.fillStyle = 'red';
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	// alert('clear');
 }
+
+//pick the canvas function
+canvas.addEventListener('click',() => {
+	colorPicker = window.getComputedStyle(canvas).getPropertyValue('background-color');
+	console.log('this is the main color ' + colorPicker);
+});
+
 
 
 // function for change fill color
@@ -112,11 +128,5 @@ function clearButton(){
 // btnPenColor.addEventListener('click', function(){
 // 	ctx.strokeStyle = colorPen;
 // 	ctx.lineWidth = widthPen;
-// });
-
-// function for change pen width
-// let btnPenWidth = document.getElementById('btn-width');
-// btnPenWidth.addEventListener('input', function(){
-// 	ctx.lineWidth = btnPenWidth.value;
 // });
 

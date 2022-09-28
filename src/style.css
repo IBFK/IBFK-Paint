@@ -26,7 +26,7 @@ body{
 }
 
 section{
-    background-color: #4e4c6b;
+    /* background-color: #4e4c6b; */
     /* position: fixed;
     z-index: 1; */
     width: 10rem;
@@ -36,10 +36,17 @@ section{
     justify-content: center;
     align-items: center;
     margin-left: 4em;
-    border: 2px solid white;
     border-radius: 10px;
     gap: 3em;
     filter: drop-shadow(0 0 1.5em rgb(98, 121, 216));
+     /* From https://css.glass */
+    background: rgba(78, 76, 107, 0.70);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.1px);
+    -webkit-backdrop-filter: blur(6.1px);
+    border: 2px solid white;
+
 }
 
 section figure{
@@ -72,7 +79,6 @@ section figure i:hover{
     color: #f3ecec;
 }
 
-
 .modal{
     border-radius: 10px;
     margin: auto 15em;
@@ -92,26 +98,32 @@ section figure i:hover{
 }
 
 .logo{
-    pointer-events: none;
-    cursor: none;
+    padding: 0.3em;
+    margin-top: 1em;
+    margin-right: 3em;
     width: 130px;
     height: 130px;
-    background-color: #ffffff;
-    /* position: fixed;
-    z-index: 1; */
+    /* position: fixed; */
+    z-index: 1;
     /* object-fit: cover; */
-    border: 2px solid white;
-    border-radius: 10%;
     background-position: center;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.24);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.3px);
+    -webkit-backdrop-filter: blur(5.3px);
+    border: 2px solid white;
+    filter: drop-shadow(0 0 1.5em rgb(98, 121, 216));
 }
 
 .logo img{
     width: 100%;
     cursor: none;
     pointer-events: none;
-    height: 100%;
+    user-select: none;
     object-fit: cover;
-    filter: drop-shadow(0 0 1.5em rgb(98, 121, 216));
+
 }
 
 .column-1{
@@ -121,12 +133,3 @@ section figure i:hover{
     justify-content: center;
 }
 
-.column-2{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    margin-right: 2em;
-    margin-top: 2em;
-    z-index: 1;
-}
