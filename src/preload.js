@@ -102,9 +102,7 @@ function changeWidth(value){
 
 // function for erase color
 function clearButton(){
-	ctx.strokeStyle = ctx.fillStyle;
-	ctx.fillStyle = 'red';
-	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	ctx.strokeStyle = 'white' || backgroundMain;
 	// alert('clear');
 }
 
