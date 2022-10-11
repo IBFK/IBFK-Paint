@@ -17,23 +17,18 @@ canvas.style.position='fixed';
 canvas.style.top='0';
 canvas.style.left='0';
 
-// 1400005908915369
-//PEGR781123
 
 //set canvas settings
-let widthPen = ctx.lineWidth = 10;
+let widthPen = ctx.lineWidth = 5;
 let lineJoin = ctx.lineJoin = 'round';
 let lineCap = ctx.lineCap = 'round';
 let colorPen = ctx.strokeStyle = 'black';
 let backgroundMain  = ctx.fillStyle = '#f1f0eb';
 // let actualMainColor = ctx.fillStyle;
 
-
-
-
-
 // set mouse position
 var mouse = {x:0, y:0};
+
 
 // paint functions
 canvas.addEventListener('mousemove',function(e){
@@ -93,16 +88,22 @@ btnClean.addEventListener('click', function(){
 	ctx.fillStyle = backgroundMain;
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	ctx.strokeStyle = colorPen;
+	ctx.lineWidth = widthPen;
 });
 
 //function to change width pen
 function changeWidth(value){
 	ctx.lineWidth = value;
 }
+//function to change color pen
+function changeColor(value){
+	ctx.strokeStyle = value;
+}
 
 // function for erase color
 function clearButton(){
 	ctx.strokeStyle = 'white' || backgroundMain;
+	ctx.lineWidth = 20 || widthPen;
 	// alert('clear');
 }
 
@@ -110,6 +111,14 @@ function clearButton(){
 canvas.addEventListener('click',() => {
 	colorPicker = window.getComputedStyle(canvas).getPropertyValue('background-color');
 	console.log('this is the main color ' + colorPicker);
+});
+
+
+//pen color function
+let btnPen = document.getElementById('btn-pen');
+btnPen.addEventListener('click', function(){
+	ctx.strokeStyle = colorPen;
+	ctx.lineWidth = widthPen;
 });
 
 

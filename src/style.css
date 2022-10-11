@@ -69,6 +69,7 @@ section figure i:hover{
     transform: scale(1.5);
 }
 
+
 #rangeEraser, #rangeColor, #colorPen, #colorFill{
     width: 90%;
     height: 15%;
