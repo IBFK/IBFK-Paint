@@ -1,8 +1,8 @@
 {
-  "name": "paintjs",
-  "productName": "paintjs",
+  "name": "IBFK-PAINT",
+  "productName": "IBFK-PAINT",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "IBFK for education",
   "main": "src/index.js",
   "scripts": {
     "start": "electron-forge start",
@@ -24,7 +24,7 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "paintjs"
+            "name": "IBFK-PAINT"
           }
         },
         {

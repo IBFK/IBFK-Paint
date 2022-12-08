@@ -24,7 +24,6 @@ let lineJoin = ctx.lineJoin = 'round';
 let lineCap = ctx.lineCap = 'round';
 let colorPen = ctx.strokeStyle = 'black';
 let backgroundMain  = ctx.fillStyle = '#f1f0eb';
-// let actualMainColor = ctx.fillStyle;
 
 // set mouse position
 var mouse = {x:0, y:0};
@@ -76,6 +75,11 @@ function onPaint(e){
 	ctx.stroke();
 	e.defaultPrevented()
 };
+
+canvas.addEventListener('mouseleave',function(){
+	canvas.removeEventListener('mousemove',onPaint,false);
+	e.defaultPrevented();
+},false);
 
 
 // Section function
